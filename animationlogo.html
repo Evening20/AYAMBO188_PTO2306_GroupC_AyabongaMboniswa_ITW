@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3f6cf4;
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.social-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    position: relative;
+    transition: tranform 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(10px, -10px);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    75% {
+        transform: translate(-10px, 10px);
+    }
+
+}
+
+.social-logo:hover {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+</style>
+</head>
+<body>
+<div class="social-logo">
+    <img src="https://i.postimg.cc/bNvkwrp9/images.png" alt="LinkedIn Logo" style="width: 50px;height: 50px;"> 
+</div>
+<div class="social-logo">
+<img src="https://i.postimg.cc/1Xr3pJkY/25231.png" alt="Guthub Logo" style="width: 50px;height: 50px;">
+
+</div>
+</body>
+</html>
