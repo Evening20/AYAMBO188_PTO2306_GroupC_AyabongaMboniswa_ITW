@@ -3,101 +3,125 @@
 
 <head>
     <style>
-    /* ---- Back to top ---- */
+        /* ---- Back to top ---- */
+        #back-to-top {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+        }
+        
+        #back-to-top > button {
+            background-color: rgb(83, 109, 254);
+            border-radius: 50%;
+            border: solid 1px rgb(83, 109, 254);
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        
+        #back-to-top > button:hover {
+            border: solid 1px rgb(83, 109, 254);
+            background-color: white;
+            text-decoration: none;
+            color: rgb(83, 109, 254);
+        }
+        
+        /* ---- Nav ---- */
+        
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(36, 36, 36);
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        /* Styling for navigation links */
+        .nav-link {
+            text-decoration: none;
+            color: rgb(125, 162, 15);
+            margin: 0 4vw;
+        }
+        
+        /* Styling for navigation links on hover */
+        .nav-link:hover {
+            color: rgb(120, 168, 252);
+        }
+        
+        /* ---- Header ---- */
+        #top {
+            background-image: url('https://i.postimg.cc/HnTGvcyW/backround.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(204, 204, 43);
+            padding: 10rem 2rem; 
+            text-align: center;
+        }
+
+        /* Styling for the content within the header */
+        .header-content {
+            padding: 3rem;
+        }
+        
+        /* Styling for the header image */
+        #header-image {
+            border-radius: 10%;
+            width: 300px;
+            height: 225px;
+            position: relative;
+            top: 35px;
+            z-index: 1;
+        }
+        
+        /* New styling for the <picture> element */
+        #top picture {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+        }
     
-    #back-to-top {
-        position: fixed;
-        bottom: 80px;
-        right: 80px;
-    }
+        /* Styling for the image inside the <picture> element */
+        #top img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10%;
+            position: fixed;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
     
-    #back-to-top > button {
-        background-color: rgb(83, 109, 254); /* Updated color */
-        border-radius: 50%;
-        border: solid 1px rgb(83, 109, 254); /* Updated color */
-        width: 50px;
-        height: 50px;
-        text-decoration: none;
-        color: whitesmoke;
-    }
-    
-    #back-to-top > button:hover {
-        border: solid 1px rgb(83, 109, 254); /* Updated color */
-        background-color: white;
-        text-decoration: none;
-        color: rgb(83, 109, 254); /* Updated color */
-    }
-    
-    /* ---- Nav ---- */
-    
-    #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgb(36, 36, 36); /* Updated color */
-        color: white;
-        text-align: center;
-        z-index: 1;
-    }
-    
-    /* Styling for navigation links */
-    .nav-link {
-        text-decoration: none;
-        color: white;
-        margin: 0 4vw;
-    }
-    
-    /* Styling for navigation links on hover */
-    .nav-link:hover {
-        color: rgb(120, 168, 252); /* Updated color */
-    }
-    
-    /* ---- Header ---- */
-    
-    #top {
-        display: flex;
-        background-color: rgb(63, 66, 79); /* Updated color */
-        color: rgb(204, 204, 43);
-        padding: 2rem;
-        padding-bottom: 4rem;
-        height: 25vh;
-        position: relative;
-    }
-    
-    /* Styling for the content within the header */
-    .header-content {
-        padding: 3rem;
-    }
-    
-    /* Styling for the header image */
-    #header-image {
-        border-radius: 10%;
-        width: 300px;
-        height: 225px;
-        position: relative;
-        top: 35px;
-        z-index: 1;
-    }
-    
-    body {
-        background-color: #f0b9f5; /* Set your desired background color */
-    }
-    
+        body {
+            background-color: #f0b9f5;
+            margin: 0;
+        }
     </style>
+    
+    
     <title>Ayabonga Mboniswa</title>
     </head>
 
 <body>
+    
     <nav id="navbar">
         <a class="nav-link" href="#services">Our Services</a> |
         <a class="nav-link" href="#about">About Us</a> |
         <a class="nav-link" href="projects">Project We Have Worked On</a>
     </nav>
     <header id="top">
-        <div>
+        <picture>
+            <source media="(max-width: 650px)" srcset="https://i.postimg.cc/d1nW9yHR/small.png">
+            <source media="(max-width: 1000px)" srcset="https://i.postimg.cc/85k4sCp7/med.png">
             <img id="header-image" src="https://i.postimg.cc/d1Js8xm9/Evile.jpg" alt="header-image">
-        </div>
+        </picture>
         <div class="header-content">
             <h1>Super Software</h1>
             <p>
@@ -218,7 +242,6 @@
                     <option value="General Inquiry">General Inquiry</option>
                     <option value="Job Opportunity">Job Opportunity</option>
                     <option value="Feedback">Feedback</option>
-                    <!-- Add more options as needed -->
                 </select>
                 
                 <label for="contactEmail">Your Email:</label>
