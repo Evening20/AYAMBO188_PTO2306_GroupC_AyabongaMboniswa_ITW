@@ -9,7 +9,7 @@
             bottom: 80px;
             right: 80px;
         }
-        
+
         #back-to-top > button {
             background-color: rgb(83, 109, 254);
             border-radius: 50%;
@@ -19,16 +19,15 @@
             text-decoration: none;
             color: whitesmoke;
         }
-        
+
         #back-to-top > button:hover {
             border: solid 1px rgb(83, 109, 254);
             background-color: white;
             text-decoration: none;
             color: rgb(83, 109, 254);
         }
-        
+
         /* ---- Nav ---- */
-        
         #navbar {
             position: fixed;
             top: 0;
@@ -39,35 +38,34 @@
             text-align: center;
             z-index: 1;
         }
-        
-        /* Styling for navigation links */
+
         .nav-link {
             text-decoration: none;
             color: rgb(125, 162, 15);
             margin: 0 4vw;
         }
-        
-        /* Styling for navigation links on hover */
+
         .nav-link:hover {
             color: rgb(120, 168, 252);
         }
-        
+
         /* ---- Header ---- */
         #top {
-            background-image: url('https://i.postimg.cc/HnTGvcyW/backround.jpg');
+            display: flex;
+            background-image: url('https://i.postimg.cc/26T2ZC82/backround.jpgnd-image');
             background-size: cover;
             background-position: center;
             color: rgb(204, 204, 43);
-            padding: 10rem 2rem; 
-            text-align: center;
+            padding: 2rem;
+            padding-bottom: 4rem;
+            height: 100vh;
+            position: relative;
         }
 
-        /* Styling for the content within the header */
         .header-content {
             padding: 3rem;
         }
-        
-        /* Styling for the header image */
+
         #header-image {
             border-radius: 10%;
             width: 300px;
@@ -76,41 +74,16 @@
             top: 35px;
             z-index: 1;
         }
-        
-        /* New styling for the <picture> element */
-        #top picture {
-            display: block;
-            width: 100%;
-            height: auto;
-            position: relative;
-            z-index: 1;
-        }
-    
-        /* Styling for the image inside the <picture> element */
-        #top img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10%;
-            position: fixed;
-            top: 35px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-    
+
         body {
-            background-color: #f0b9f5;
             margin: 0;
+            background-color: rgb(58, 207, 223);
         }
     </style>
-    
-    
     <title>Ayabonga Mboniswa</title>
-    </head>
+</head>
 
 <body>
-    
     <nav id="navbar">
         <a class="nav-link" href="#services">Our Services</a> |
         <a class="nav-link" href="#about">About Us</a> |
@@ -120,7 +93,7 @@
         <picture>
             <source media="(max-width: 650px)" srcset="https://i.postimg.cc/d1nW9yHR/small.png">
             <source media="(max-width: 1000px)" srcset="https://i.postimg.cc/85k4sCp7/med.png">
-            <img id="header-image" src="https://i.postimg.cc/d1Js8xm9/Evile.jpg" alt="header-image">
+            <img src="https://i.postimg.cc/d1Js8xm9/Evile.jpg" alt="Evile" style="width: 180px;height: 180px; border: 2px solid; border-radius: 100%;">
         </picture>
         <div class="header-content">
             <h1>Super Software</h1>
@@ -133,14 +106,11 @@
             <button>View our services</button>
         </div>
     </header>
-
     <a id="back-to-top" href="#top">
-        <button >
+        <button>
             &uarr;
         </button>
     </a>
-
-
     <main id="content">
 
         <section id="services" class="section">
@@ -213,7 +183,6 @@
 
 
     </main>
-
     <footer id="footer">
         <nav id="footer-links">
             <a class="nav-link" href="#services">Our Services</a> |
