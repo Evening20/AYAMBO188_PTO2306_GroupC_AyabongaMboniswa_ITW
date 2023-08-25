@@ -1,386 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Ayabonga Mboniswa</title>
 <style>
-    /* Global styles */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: rgb(58, 207, 223);
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3f6cf4;
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.social-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(0, 0);
     }
-    
-    /* Mobile Styles */
-    @media (max-width: 480px) {
-        /* Adjust header and navigation */
-        #navbar {
-            text-align: center;
-        }
-    
-        /* Adjust header content */
-        .header-content {
-            padding: 1rem;
-        }
-    
-        /* Adjust header image */
-        #header-image {
-            width: 100%;
-            height: auto;
-        }
-    
-        /* Adjust footer links */
-        #footer-links {
-            text-align: center;
-        }
+    25% {
+        transform: translate(10px, -10px);
     }
-    
-    /* Tablet Styles */
-    @media (min-width: 481px) and (max-width: 1024px) {
-        /* Adjust header content */
-        .header-content {
-            padding: 2rem;
-        }
-    
-        /* Adjust header image */
-        #header-image {
-            width: 80%;
-            height: auto;
-        }
-    
-        /* Adjust footer layout */
-        #footer {
-            padding: 2rem;
-        }
+    50% {
+        transform: translate(0, 0);
     }
-    
-    /* Laptop Styles */
-    @media (min-width: 1025px) {
-        /* Adjust header layout */
-        #top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 3rem;
-            padding-bottom: 5rem;
-        }
-    
-        /* Adjust header image size */
-        #header-image {
-            width: 300px;
-            height: auto;
-        }
-    
-        /* Adjust header content */
-        .header-content {
-            padding: 3rem;
-        }
-    
-        /* Adjust footer layout */
-        #footer {
-            padding: 4rem;
-        }
+    75% {
+        transform: translate(-10px, 10px);
     }
-    
-    /* ---- Back to top ---- */
-    #back-to-top {
-        position: fixed;
-        bottom: 80px;
-        right: 80px;
-    }
-    
-    #back-to-top > button {
-        background-color: rgb(83, 109, 254);
-        border-radius: 50%;
-        border: solid 1px rgb(83, 109, 254);
-        width: 50px;
-        height: 50px;
-        text-decoration: none;
-        color: whitesmoke;
-    }
-    
-    #back-to-top > button:hover {
-        border: solid 1px rgb(83, 109, 254);
-        background-color: white;
-        text-decoration: none;
-        color: rgb(83, 109, 254);
-    }
-    
-    /* ---- Nav ---- */
-    #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgb(36, 36, 36);
-        color: white;
-        text-align: center;
-        z-index: 1;
-    }
-    
-    .nav-link {
-        text-decoration: none;
-        color: rgb(125, 162, 15);
-        margin: 0 4vw;
-    }
-    
-    .nav-link:hover {
-        color: rgb(120, 168, 252);
-    }
-    
-    /* ---- Header ---- */
-    #top {
-        display: flex;
-        background-image: url('https://i.postimg.cc/26T2ZC82/backround.jpgnd-image');
-        background-size: cover;
-        background-position: center;
-        color: rgb(204, 204, 43);
-        padding: 2rem;
-        padding-bottom: 4rem;
-        height: 100vh;
-        position: relative;
-    }
-    
-    .header-content {
-        padding: 3rem;
-    }
-    
-    #header-image {
-        border-radius: 10%;
-        width: 300px;
-        height: 225px;
-        position: relative;
-        top: 35px;
-        z-index: 1;
-    }
-    
-    /* Additional Flexbox styles here */
-    header {
-        display: flex;
-        align-items: center;
-        background-color: #f2f2f2;
-        padding: 2rem;
-    }
-    
-    .header-content {
-        flex: 1;
-        padding: 1rem;
-    }
-    
-    #navbar {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex: 1;
-        margin-right: 1rem;
-    }
-    
-    #navbar .nav-link {
-        margin: 0 1rem;
-        text-decoration: none;
-        color: #333;
-    }
-    
-    main {
-        padding: 2rem;
-    }
-    
-    .section {
-        margin-bottom: 2rem;
-    }
-    
-    .section h2 {
-        margin-bottom: 1rem;
-    }
-    
-    .service {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-    }
-    
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 2rem;
-        text-align: center;
-    }
-    
-    #footer-links {
-        margin-bottom: 1rem;
-    }
-    
-    #footer-links .nav-link {
-        margin: 0 1rem;
-        text-decoration: none;
-        color: #fff;
-    }
-    
-    #footer .social-buttons button {
-        background-color: #666;
-        border: none;
-        color: #fff;
-        margin: 0 0.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    #footer form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    #footer form label,
-    #footer form input,
-    #footer form textarea,
-    #footer form select,
-    #footer form button {
-        margin-bottom: 1rem;
-        width: 100%;
-    }
-    </style>
+}
+
+.social-logo:hover {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Change color when hovering */
+.social-logo:hover img {
+    filter: invert(1); /* Invert the color (change to your preferred effect) */
+}
+</style>
 </head>
 <body>
-    <nav id="navbar">
-        <a class="nav-link" href="#services">Our Services</a> |
-        <a class="nav-link" href="#about">About Us</a> |
-        <a class="nav-link" href="projects">Project We Have Worked On</a>
-    </nav>
-    <header id="top">
-        <picture>
-            <source media="(max-width: 650px)" srcset="https://i.postimg.cc/d1nW9yHR/small.png">
-            <source media="(max-width: 1000px)" srcset="https://i.postimg.cc/85k4sCp7/med.png">
-            <img src="https://i.postimg.cc/d1Js8xm9/Evile.jpg" alt="Evile" style="width: 180px;height: 180px; border: 2px solid; border-radius: 100%;">
-        </picture>
-        <div class="header-content">
-            <h1>Super Software</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis soluta, laboriosam similique corrupti
-                dolorem dignissimos placeat ullam doloremque iure doloribus quod. Id ad delectus facilis veniam,
-                accusantium error autem ex?
-            </p>
-            <button>Contact Us</button>
-            <button>View our services</button>
-        </div>
-    </header>
-    <a id="back-to-top" href="#top">
-        <button>
-            &uarr;
-        </button>
-    </a>
-    <main id="content">
-
-        <section id="services" class="section">
-            <h2>
-                Development Services We Specialize in:
-            </h2>
-            <article class="service">
-                <h3> Web Development </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nam voluptatem officiis
-                    quibusdam praesentium. Cupiditate sint aliquam minima sequi voluptatum qui, provident cum, maiores
-                    consectetur nam, beatae quam officia rerum!s
-                </p>
-            </article>
-
-            <article class="service">
-                <h3> Mobile Development </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nam voluptatem officiis
-                    quibusdam praesentium. Cupiditate sint aliquam minima sequi voluptatum qui, provident cum, maiores
-                    consectetur nam, beatae quam officia rerum!s
-                </p>
-            </article>
-
-            <article class="service">
-                <h3> System Development </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nam voluptatem officiis
-                    quibusdam praesentium. Cupiditate sint aliquam minima sequi voluptatum qui, provident cum, maiores
-                    consectetur nam, beatae quam officia rerum!s
-                </p>
-            </article>
-        </section>
-
-        <section id="about" class="section">
-            <h2>
-                About Us:
-            </h2>
-
-            <div id="about-content">
-
-                <div>
-                    <h3>Founded</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio illum doloribus velit blanditiis
-                        deserunt
-                        vitae. Veniam modi nesciunt qui quo. Nam eveniet sint placeat facilis nulla soluta quidem vitae.
-                        Delectus!
-                    </p>
-                </div>
-
-                <div>
-                    <h3>
-                        Specializations
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id qui dolore similique corporis.
-                        Similique
-                        quis cum dolore repellat quod ipsum ex enim culpa sed, praesentium quia facere. Ex, dolorum
-                        nobis?
-                    </p>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-
-        </section>
-
-
-    </main>
-    <footer id="footer">
-        <nav id="footer-links">
-            <a class="nav-link" href="#services">Our Services</a> |
-            <a class="nav-link" href="#about">About Us</a> |
-            <a class="nav-link" href="projects">Project We Have Worked On</a>
-        </nav>
-        <h2>Super Software</h2>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit eum nulla hic harum vel eligendi natus fugiat
-            iusto quaerat pariatur nobis ea exercitationem enim ipsam unde perspiciatis, totam earum maiores.
-        </p>
-        <h4>
-            Socials:
-        </h4>
-        <p>
-            <button>LinkedIn</button>
-            <button>Facebook</button>
-            <button>Glassdoor</button>
-        </p>
-        
-            <h4>Contact Us:</h4>
-            <form action="https://formsubmit.co/mboniswaayabonga@gmail" method="POST">
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject" required>
-                    <option value="">Select a subject</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Job Opportunity">Job Opportunity</option>
-                    <option value="Feedback">Feedback</option>
-                </select>
-                
-                <label for="contactEmail">Your Email:</label>
-                <input type="email" id="contactEmail" name="contact_email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="user_message"></textarea>
-                
-                <input type="submit" value="Submit">
-            </form>
-        
-    </footer>
+<div class="social-logo">
+    <img src="https://i.postimg.cc/bNvkwrp9/images.png" alt="LinkedIn Logo" style="width: 50px;height: 50px;"> 
+</div>
+<div class="social-logo">
+    <img src="https://i.postimg.cc/1Xr3pJkY/25231.png" alt="GitHub Logo" style="width: 50px;height: 50px;">
+</div>
 </body>
-
 </html>
